@@ -6,7 +6,7 @@ RUN apk add --update \
 
 RUN wget -O /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64 && chmod +x /usr/local/bin/dep
 
-WORKDIR /go/src/github.com/kgretzky/evilginx2
+WORKDIR /go/src/github.com/snr4x/evilginx2
 
 COPY go.mod go.sum ./
 
@@ -14,7 +14,7 @@ ENV GO111MODULE on
 
 RUN go mod download
 
-COPY . /go/src/github.com/kgretzky/evilginx2
+COPY . /go/src/github.com/snr4x/evilginx2
 
 RUN go build -o ./bin/evilginx main.go
 
