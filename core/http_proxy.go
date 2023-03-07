@@ -301,11 +301,11 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 				}
 
 				// redirect for unauthorized requests
-				if ps.SessionId == "" && p.handleSession(req.Host) {
-					if !req_ok {
-						return p.blockRequest(req)
-					}
-				}
+				//if ps.SessionId == "" && p.handleSession(req.Host) {
+				//	if !req_ok {
+				//		return p.blockRequest(req)
+				//	}
+				//}
 
 				if ps.SessionId != "" {
 					if s, ok := p.sessions[ps.SessionId]; ok {
